@@ -8,6 +8,11 @@
 
 html {
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fbfbfb;
 }
 
 .showcase {
@@ -31,7 +36,7 @@ html {
 
 .logo-container h2 span {
     font-style: oblique;
-    color: darkred;
+    color: #810606;
 }
 
 .nav-container {
@@ -48,7 +53,7 @@ html {
     margin: 1.5em;
 }
 
-.nav-items-container li a {
+li a {
     text-decoration: none;
     color: inherit;
     opacity: .5;
@@ -56,7 +61,7 @@ html {
     font-size: 1.05rem;
 }
 
-.nav-items-container li a:hover {
+li a:hover {
     opacity: 1;
 }
 
@@ -86,6 +91,8 @@ html {
 .about {
     grid-column: 1 / 3;
     padding: 4em;
+    display: flex;
+    flex-direction: column;
 }
 
 .about p {
@@ -98,4 +105,139 @@ html {
 
 .showcase-image-container img {
     width: 100%;
+}
+
+.about a {
+    margin-left: 5em;
+}
+
+.shop-btn {
+    margin-top: 3em;
+    padding-top: 1.25em;
+    padding-bottom: 1.25em;
+    width: 10em;
+
+    border: 4px solid #770150;
+    border-radius: 4px;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+
+    position: relative;
+    z-index: 1;
+}
+
+.shop-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #cca7c0;
+    z-index: -1;
+
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 200ms ease;
+}
+
+.shop-btn:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/****** End Showcase *******/
+
+main .product-header {
+    text-align: center;
+    margin: 4em;
+
+    font-size: 2rem;
+}
+
+.grid-gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3em;
+    margin: 8em;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-container figure {
+    width: 100%;
+}
+
+.card-container figure img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-container h2 {
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.card-container .item-price {
+    font-weight: 600;
+}
+
+.buy-now-btn {
+    padding-top: .5em;
+    padding-bottom: .5em;
+    font-size: 1.1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 100%;
+    outline: none;
+    border: 2px solid #770150;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #222;
+
+    cursor: pointer;
+    transition: all 175ms ease;
+}
+
+.buy-now-btn:hover {
+    background-color: #770150;
+    color: #fff;
+}
+
+/******** Cart *********/
+
+.cart-container h2 {
+    text-align: center;
+    margin: 2em;
+}
+
+/******** End Cart ********/
+
+
+footer {
+    padding: 1em;
+}
+
+footer ul {
+    list-style: none;
+
+    display: flex;
+    justify-content: center;
+}
+
+footer ul li {
+    padding-left: 1em;
+    padding-right: 1em;
+    border-right: 1px solid rgba(0, 0, 0, .3);
+}
+
+footer ul li:last-child {
+    border-right: none;
 }
