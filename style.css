@@ -213,9 +213,44 @@ main .product-header {
 
 /******** Cart *********/
 
+.cart-container {
+    width: 40%;
+    margin: 0 auto;
+}
+
 .cart-container h2 {
     text-align: center;
     margin: 2em;
+}
+
+.cart-items-list {
+    list-style: none;
+}
+
+.cart-items-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 4em;
+}
+
+.row-header span {
+    border-bottom: 1px solid rgba(0, 0, 0, .75);
+    text-align: start;
+}
+
+.removeBtn {
+    background: red;
+}
+
+.total-container {
+    text-align: center;
+    font-weight: 400;
+}
+
+.total {
+    font-weight: 600;
 }
 
 /******** End Cart ********/
