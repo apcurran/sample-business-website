@@ -1,6 +1,8 @@
 const cartSetup = (() => {
     const buyBtns = document.querySelectorAll(".buy-now-btn");
     const cartItemsList = document.querySelector(".cart-items-list");
+    let numTotalAmt = parseFloat(document.querySelector(".total-amt").textContent);
+    let totalAmtSpan = document.querySelector(".total-amt");
 
     function addToCart(event) {
         const currentBuyBtn = event.target;
@@ -15,18 +17,43 @@ const cartSetup = (() => {
 
         itemNameSpan.textContent = itemName;
         itemPriceSpan.textContent = itemPrice;
-        removeBtn.classList.add("removeBtn");
+        removeBtn.classList.add("remove-btn");
         removeBtn.textContent = "Remove";
+
+        // Add the item to the shopping cart grid.
 
         li.appendChild(itemNameSpan);
         li.appendChild(itemPriceSpan);
         li.appendChild(removeBtn);
         cartItemsList.appendChild(li);
+
+        // Add item price to total.
+        addToTotal(itemPrice);
+    }
+
+    function removeItem(event) {
+        if (event.target.className === "remove-btn") {
+            const li = event.target.parentElement;
+            cartItemsList.removeChild(li);
+        }
+    }
+
+    function addToTotal(currentItemAmt) {
+        // Remove the $ symbol first.
+        const stringItemAmt = currentItemAmt.slice(1);
+        const numItemAmt = parseFloat(stringItemAmt);
+        numTotalAmt += numItemAmt;
+        totalAmtSpan.textContent = numTotalAmt;
+    }
+
+    function subtractFromTotal() {
+        
     }
 
     buyBtns.forEach((button) => {
         button.addEventListener("click", addToCart);
     });
 
+    cartItemsList.addEventListener("click", removeItem);
 
 })();

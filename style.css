@@ -203,7 +203,7 @@ main .product-header {
     color: #222;
 
     cursor: pointer;
-    transition: all 175ms ease;
+    transition: all 205ms ease;
 }
 
 .buy-now-btn:hover {
@@ -228,9 +228,10 @@ main .product-header {
 }
 
 .cart-items-list li {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
-    align-items: center;
+    align-items: left;
 
     margin-bottom: 4em;
 }
@@ -240,21 +241,36 @@ main .product-header {
     text-align: start;
 }
 
-.removeBtn {
-    background: red;
+.remove-btn {
+    background: #be0e0e;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    opacity: .85;
+
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    transition: opacity 205ms ease;
 }
 
-.total-container {
-    text-align: center;
-    font-weight: 400;
+.remove-btn:hover {
+    opacity: 1;
 }
 
 .total {
+    font-style: oblique;
+    font-weight: 400;
+}
+
+.total .total-amt {
     font-weight: 600;
 }
 
 /******** End Cart ********/
-
 
 footer {
     padding: 1em;
