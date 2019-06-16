@@ -203,7 +203,7 @@ main .product-header {
     color: #222;
 
     cursor: pointer;
-    transition: all 205ms ease;
+    transition: all 200ms ease;
 }
 
 .buy-now-btn:hover {
@@ -254,7 +254,7 @@ main .product-header {
     border-radius: 4px;
     cursor: pointer;
 
-    transition: opacity 205ms ease;
+    transition: opacity 200ms ease;
 }
 
 .remove-btn:hover {

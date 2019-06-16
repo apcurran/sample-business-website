@@ -35,6 +35,11 @@ const cartSetup = (() => {
         if (event.target.className === "remove-btn") {
             const li = event.target.parentElement;
             cartItemsList.removeChild(li);
+
+            const currentDeleteBtn = event.target;
+            const currentItemCost = currentDeleteBtn.previousElementSibling.textContent;
+            // Remove item amt from total.
+            subtractFromTotal(currentItemCost);
         }
     }
 
@@ -46,8 +51,11 @@ const cartSetup = (() => {
         totalAmtSpan.textContent = numTotalAmt;
     }
 
-    function subtractFromTotal() {
-        
+    function subtractFromTotal(currentItemAmt) {
+        const stringItemAmt = currentItemAmt.slice(1);
+        const numItemAmt = parseFloat(stringItemAmt);
+        numTotalAmt -= numItemAmt;
+        totalAmtSpan.textContent = numTotalAmt;
     }
 
     buyBtns.forEach((button) => {
