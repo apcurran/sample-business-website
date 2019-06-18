@@ -31,6 +31,14 @@ const cartSetup = (() => {
         addToTotal(itemPrice);
     }
 
+    function addToTotal(currentItemAmt) {
+        // Remove the $ symbol first.
+        const stringItemAmt = currentItemAmt.slice(1);
+        const numItemAmt = parseFloat(stringItemAmt);
+        numTotalAmt += numItemAmt;
+        totalAmtSpan.textContent = numTotalAmt;
+    }
+
     function removeItem(event) {
         if (event.target.className === "remove-btn") {
             const li = event.target.parentElement;
@@ -41,14 +49,6 @@ const cartSetup = (() => {
             // Remove item amt from total.
             subtractFromTotal(currentItemCost);
         }
-    }
-
-    function addToTotal(currentItemAmt) {
-        // Remove the $ symbol first.
-        const stringItemAmt = currentItemAmt.slice(1);
-        const numItemAmt = parseFloat(stringItemAmt);
-        numTotalAmt += numItemAmt;
-        totalAmtSpan.textContent = numTotalAmt;
     }
 
     function subtractFromTotal(currentItemAmt) {
