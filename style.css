@@ -307,15 +307,19 @@ footer ul li:last-child {
 @media screen and (max-width: 50em) {
     
     .header-container {
-        padding: .25em 2em;
+        padding: .2em 1em;
     }
 
     .logo-container h2 {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 
     .nav-items-container li {
-        margin: 1em;
+        margin: .6em;
+    }
+
+    .nav-items-container li a {
+        font-size: .9rem;
     }
 
     .about {
@@ -358,5 +362,9 @@ footer ul li:last-child {
         padding-top: .3em;
         padding-bottom: .3em;
         font-size: .9rem;
+    }
+
+    footer ul li a {
+        font-size: .65rem;
     }
 }
