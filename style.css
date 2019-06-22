@@ -16,7 +16,7 @@ body {
 }
 
 .showcase {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .header-container {
@@ -85,7 +85,7 @@ li a:hover {
     justify-items: center;
     align-items: center; 
 
-    height: 90vh;
+    min-height: 90vh;
 }
 
 .about {
